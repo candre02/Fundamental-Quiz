@@ -21,6 +21,15 @@ body {
     transform: translate(-45%, -45%);
     box-shadow: 0px 4px 8px 0 rgb(128, 53, 4),
                 0px 6px 20px 0 rgb(172, 74, 9);
+    transition: all 0.3s ease;            
+}
+
+.info_box.activeInfo,
+.quiz_box.activeQuiz {
+    z-index: 5;
+    opacity: 1; 
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 /* Start Button Styling */
@@ -85,6 +94,7 @@ body {
     margin: 0 5px;
     height: 40px;
     width: 100px;
+    outline: none;
     border: 1px solid coral;
     border-radius: 5px;
     color: navy;
