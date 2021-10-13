@@ -1,2 +1,2 @@
 // getting all required element
-const start-btn
+const start_btn = document.querySelector("")
