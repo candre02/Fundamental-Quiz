@@ -1,7 +1,7 @@
 // craeting an array and passing the number, questions, options, and answers
 let questions = [
     {
-        numb: 1.,
+        numb: 1,
         question: "What does DOM stand for?",
         answer: "Documnet Object Model",
         option: [
@@ -12,7 +12,7 @@ let questions = [
         ]
     },
     {
-        numb: 2.,
+        numb: 2,
         question: "What does HTML stand for?",
         answer: "Hyper Text Markup Language",
         option: [
@@ -23,7 +23,7 @@ let questions = [
         ]
     },
     {
-        numb: 3.,
+        numb: 3,
         question: "What function is passed as an arguement to another function?",
         answer: "CallBack()",
         option: [
@@ -34,7 +34,7 @@ let questions = [
         ]
     },
     {
-        numb: 4.,
+        numb: 4,
         question: "What method can be used to Add or Update any Attribute on an HTML element?",
         answer: "setAttribute()",
         option: [
@@ -45,7 +45,7 @@ let questions = [
         ]
     },
     {
-        numb: 5.,
+        numb: 5,
         question: "What does CSS stand for?",
         answer: "Cascading Style Sheets",
         option: [

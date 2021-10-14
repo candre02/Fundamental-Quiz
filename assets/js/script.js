@@ -16,12 +16,12 @@ start_btn.onclick = () => {
 }
 
 // If end button clicked
-end_btn.onclick = () => {
+end_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo");  // hide the info box
 }
 
 // If Continue button clicked
-continue_btn.onclick = () => {
+continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo");  // hide the info box
     quiz_box.classList.add("activeQuiz");  // show the quiz box
     showQuestions(0);
@@ -41,9 +41,9 @@ let userScore = 0;
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".buttons .restart");
-const end_quiz = result_box.querySelector(".buttons .end");
+const quit_quiz = result_box.querySelector(".buttons .quit");
 
-restart_quiz.onclick = () => {
+restart_quiz.onclick = ()=>{
     quiz_box.classList.add("activeQuiz");
     result_box.classList.remove("activeResult");
     let que_count = 0;
@@ -61,13 +61,13 @@ restart_quiz.onclick = () => {
     timeOff.textContent = "Time Left";
 }
 
-end_quiz.onclick = () => {
+end_quiz.onclick = ()=>{
     window.location.reload();
 }
 
 
 // If Next button clicked
-next_btn.onclick = () => {
+next_btn.onclick = ()=>{
     if (que_count < questions.length - 1) {
         que_count++;
         que_numb++;
@@ -91,20 +91,20 @@ next_btn.onclick = () => {
 function showQuestions(index) {
     const question_text = document.querySelector(".question_text");
     let question_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option">'+ questions[index].option[0] +'<span></span></div>';
+    let option_tag = '<div class="option">'+ questions[index].options[0] +'<span></span></div>';
                      + '<div class="option">'+ questions[index].options[1] +'<span></span></div>'
                      + '<div class="option">'+ questions[index].options[2] +'<span></span></div>'
                      + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
     question_text.innerHTML = question_tag;
     option_list.innerHTML = option_tag;
     const option = option_list.querySelectorAll(".option");
-    for (let index = 0; i < option.length; i++) {
+    for (let i = 0; i < option.length; i++) {
         option[i].setAttribute("onclick", "optionSelected(this)");
     }                 
 }
 
-let tickIcon = '<div class="icon tick"><i class="fas fa-check"></i></div>';
-let crossIcon = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+let tickIcon = '<div class="icon tick"><i class="far fa-check-circle"></i></div>';
+let crossIcon = '<div class="icon cross"><i class="far fa-times-circle"></i></div>';
 
 function optionSelected(answer) {
     clearInterval(counter);
@@ -123,7 +123,7 @@ function optionSelected(answer) {
         console.log("Answer is Wrong");
         answer.insertAdjacentHTML("beforeend", crossIcon);
         
-        // if answers is incorrect the automatically selected the correct answer
+        // if answers is incorrect then automatically selected the correct answer
         for (let i = 0; i < allOptions; i++) {
             if (option_list.children[i].textContent === correctAns) {
                 option_list.children[i].setAttribute("class", "option correct");
@@ -189,9 +189,6 @@ function startTimer(time) {
     }
 }
         
-    
-
-
 function startTimerLine(time) {
     counterLine = setInterval(timer, 29);
     function timer() {
@@ -202,13 +199,6 @@ function startTimerLine(time) {
         }
     }
 }
-
-
-
-
-
-
-
 
 function queCounter(index) {
     const bottom_ques_counter = quiz_box.querySelector(".total_question");
