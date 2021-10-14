@@ -21,7 +21,7 @@ end_btn.onclick = ()=>{
 }
 
 // If Continue button clicked
-continue_btn.onclick = ()=>{
+continue_btn.onclick = () =>{
     info_box.classList.remove("activeInfo");  // hide the info box
     quiz_box.classList.add("activeQuiz");  // show the quiz box
     showQuestions(0);
@@ -43,7 +43,7 @@ const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
-restart_quiz.onclick = ()=>{
+restart_quiz.onclick = () => {
     quiz_box.classList.add("activeQuiz");
     result_box.classList.remove("activeResult");
     let que_count = 0;
@@ -91,7 +91,7 @@ next_btn.onclick = ()=>{
 function showQuestions(index) {
     const question_text = document.querySelector(".question_text");
     let question_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option">'+ questions[index].options[0] +'<span></span></div>';
+    let option_tag = '<div class="option">'+ questions[index].options[0] +'<span></span></div>'
                      + '<div class="option">'+ questions[index].options[1] +'<span></span></div>'
                      + '<div class="option">'+ questions[index].options[2] +'<span></span></div>'
                      + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
