@@ -43,6 +43,7 @@ const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
+// if restart quiz clicked
 restart_quiz.onclick = () => {
     quiz_box.classList.add("activeQuiz");
     result_box.classList.remove("activeResult");
@@ -61,7 +62,8 @@ restart_quiz.onclick = () => {
     timeOff.textContent = "Time Left";
 }
 
-end_quiz.onclick = ()=>{
+// if Quit quiz clicked
+quit_quiz.onclick = ()=>{
     window.location.reload();
 }
 
@@ -91,10 +93,10 @@ next_btn.onclick = ()=>{
 function showQuestions(index) {
     const question_text = document.querySelector(".question_text");
     let question_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option">'+ questions[index].options[0] +'<span></span></div>'
-                     + '<div class="option">'+ questions[index].options[1] +'<span></span></div>'
-                     + '<div class="option">'+ questions[index].options[2] +'<span></span></div>'
-                     + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
+    let option_tag = '<div class="option">'+ questions[index].option[0] +'<span></span></div>'
+                     + '<div class="option">'+ questions[index].option[1] +'<span></span></div>'
+                     + '<div class="option">'+ questions[index].option[2] +'<span></span></div>'
+                     + '<div class="option">'+ questions[index].option[3] +'<span></span></div>';
     question_text.innerHTML = question_tag;
     option_list.innerHTML = option_tag;
     const option = option_list.querySelectorAll(".option");
@@ -103,8 +105,8 @@ function showQuestions(index) {
     }                 
 }
 
-let tickIcon = '<div class="icon tick"><i class="far fa-check-circle"></i></div>';
-let crossIcon = '<div class="icon cross"><i class="far fa-times-circle"></i></div>';
+
+
 
 function optionSelected(answer) {
     clearInterval(counter);
@@ -117,17 +119,17 @@ function optionSelected(answer) {
         console.log(userScore);
         answer.classList.add("correct");
         console.log("Answer is Correct");
-        answer.insertAdjacentHTML("beforeend", tickIcon);
+        
     } else {
         answer.classList.add("incorrect");
         console.log("Answer is Wrong");
-        answer.insertAdjacentHTML("beforeend", crossIcon);
+        
         
         // if answers is incorrect then automatically selected the correct answer
         for (let i = 0; i < allOptions; i++) {
             if (option_list.children[i].textContent === correctAns) {
                 option_list.children[i].setAttribute("class", "option correct");
-                option_list.children[i].insertAdjacentHTML("beforeend", tickIcon);
+                
             }
         }
     }
@@ -178,7 +180,7 @@ function startTimer(time) {
             for (let i = 0; i < allOptions; i++) {
                 if (option_list.children[i].textContent === correctAns) {
                     option_list.children[i].setAttribute("class", "option correct");
-                    option_list.children[i].insertAdjacentHTML("beforeend", tickIcon);
+                    option_list.children[i].insertAdjacentHTML("beforeend", thumbsUp);
                 }
             }
             for (let i = 0; i < allOptions.length; i++) {
@@ -190,7 +192,7 @@ function startTimer(time) {
 }
         
 function startTimerLine(time) {
-    counterLine = setInterval(timer, 29);
+    counterLine = setInterval(timer, 39);
     function timer() {
         time += 1;
         timeLine.style.width = time + "px";
