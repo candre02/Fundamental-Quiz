@@ -197,7 +197,8 @@ body {
 } 
 
 .quiz_box section .question_text {
-    font-size: 25x;
+    font-size: 25px;
+    font-weight: bold;
     display: block;
 }
 
@@ -269,10 +270,12 @@ section .option_list .option:hover {
 .quiz_box footer .total_question span {
     display: flex;
     user-select: none;
+    font-size: 15px;
 }
 
 footer .total_question span p {
     font-weight: 500;
+    font-size: 15px;
     padding: 0 5px;
 }
 
@@ -297,7 +300,8 @@ footer .next_btn {
 }
 
 footer .next_btn:hover {
-    background: darkcyan;
+    background: navy;
+    color: cyan;
 }
 
 .result_box {

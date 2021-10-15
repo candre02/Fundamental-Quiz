@@ -3,10 +3,10 @@ let questions = [
     {
         numb: 1,
         question: "What does DOM stand for?",
-        answer: "Documnet Object Model",
+        answer: "Document Object Model",
         option: [
-            "Documnet Object Model",
-            "Documnet Order Market",
+            "Document Object Model",
+            "Document Order Market",
             "Days Of Market",
             "Doctor Oriental Medicine"
         ]

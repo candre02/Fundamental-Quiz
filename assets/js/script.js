@@ -44,7 +44,7 @@ const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
 // if restart quiz clicked
-restart_quiz.onclick = () => {
+restart_quiz.onclick = () =>{
     quiz_box.classList.add("activeQuiz");
     result_box.classList.remove("activeResult");
     let que_count = 0;
@@ -119,17 +119,14 @@ function optionSelected(answer) {
         console.log(userScore);
         answer.classList.add("correct");
         console.log("Answer is Correct");
-        
     } else {
         answer.classList.add("incorrect");
         console.log("Answer is Wrong");
-        
         
         // if answers is incorrect then automatically selected the correct answer
         for (let i = 0; i < allOptions; i++) {
             if (option_list.children[i].textContent === correctAns) {
                 option_list.children[i].setAttribute("class", "option correct");
-                
             }
         }
     }
@@ -180,7 +177,6 @@ function startTimer(time) {
             for (let i = 0; i < allOptions; i++) {
                 if (option_list.children[i].textContent === correctAns) {
                     option_list.children[i].setAttribute("class", "option correct");
-                    option_list.children[i].insertAdjacentHTML("beforeend", thumbsUp);
                 }
             }
             for (let i = 0; i < allOptions.length; i++) {
