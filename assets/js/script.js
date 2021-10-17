@@ -40,11 +40,11 @@ let userScore = 0;
 
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
-const restart_quiz = result_box.querySelector(".buttons .restart");
+const replay_quiz = result_box.querySelector(".buttons .replay");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
 // if restart quiz clicked
-restart_quiz.onclick = () =>{
+replay_quiz.onclick = () =>{
     quiz_box.classList.add("activeQuiz");
     result_box.classList.remove("activeResult");
     let que_count = 0;
