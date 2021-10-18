@@ -38,10 +38,10 @@ let timeValue = 20;
 let widthValue = 0;
 let userScore = 0;
 
-const next_btn = quiz_box.querySelector(".next_btn");
+const next_btn = document.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
-const replay_quiz = result_box.querySelector(".buttons .replay");
-const quit_quiz = result_box.querySelector(".buttons .quit");
+const replay_quiz = document.querySelector(".replay");
+const quit_quiz = document.querySelector(".quit");
 
 // if replay quiz clicked
 replay_quiz.onclick = () =>{
@@ -78,6 +78,7 @@ quit_quiz.onclick = ()=>{
 
 // If Next button clicked
 next_btn.onclick = ()=>{
+    console.log("next clicked")
     if (que_count < questions.length - 1) {
         que_count++;
         que_numb++;
@@ -163,6 +164,8 @@ function showResultBox() {
         let scoreTag = '<span>and sorry, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
+
+
 }
 
 function startTimer(time) {
@@ -211,3 +214,47 @@ function queCounter(index) {
     let totalQuestionCountTag = '<span><p>'+ index +'</p>of<p>'+ questions.length +'</p>Questions</span>';
     bottom_ques_counter.innerHTML = totalQuestionCountTag;
 }
+
+function saveHighScore(){
+  // check out .split method to remove the decimal point and first zero
+    // checkout toFixed method to show only the first two decimals
+    let finalScore = userScore / 5;
+    let noDecimalScore = finalScore;
+    console.log("finalScore", noDecimalScore)
+
+    let initialsElement = document.getElementById("initials");
+    let initials = initialsElement.value;
+
+    if(initials !== ''){
+        var highscore = JSON.parse(localStorage.getItem("highscore")) || [];
+
+        let newScore = {
+            score: finalScore,
+            initials: initials
+        }
+        highscore.push(newScore)
+        localStorage.setItem('highscore', JSON.stringify(highscore))
+
+        initialsElement.setAttribute("class", "hide")
+        submitBtn.setAttribute("class", "hide")
+        highScoreBtn.removeAttribute("class")
+
+    }
+}
+
+function showHighScore(){
+    var highscores = JSON.parse(localStorage.getItem("highscore"))
+
+    highscores.forEach(function(score){
+        let liTag = document.createElement("li");
+        liTag.textContent = score.initials + ": " + score.score;
+
+        const ulElement = document.getElementById("userScores")
+        ulElement.append(liTag);
+    })
+}
+let highScoreBtn = document.getElementById("highScoreBtn")
+let submitBtn = document.getElementById("submitBtn");
+submitBtn.onclick = saveHighScore;
+highScoreBtn.onclick = showHighScore;
+
