@@ -43,24 +43,31 @@ const result_box = document.querySelector(".result_box");
 const replay_quiz = result_box.querySelector(".buttons .replay");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
-// if restart quiz clicked
+// if replay quiz clicked
 replay_quiz.onclick = () =>{
-    quiz_box.classList.add("activeQuiz");
+    if (quiz_box.classList.add("activeQuiz")) {
+    } else if 
+        (quiz_box.classList.add("activeQuiz"))
+        let que_count = 0;
+        let que_numb = 1;
+        let timeValue = 20;
+        let widthValue = 0;
+        let userScore = 0;
+        showQuestions(que_count);
+        queCounter(que_numb);
+        clearInterval(counter);
+        startTimer(timeValue);
+        clearInterval(counterLine);
+        startTimerLine(widthValue);
+        next_btn.style.display = "none";
+        timeOff.textContent = "Time Left";
+} else {
     result_box.classList.remove("activeResult");
-    let que_count = 0;
-    let que_numb = 1;
-    let timeValue = 20;
-    let widthValue = 0;
-    let userScore = 0;
-    showQuestions(que_count);
-    queCounter(que_numb);
-    clearInterval(counter);
-    startTimer(timeValue);
-    clearInterval(counterLine);
-    startTimerLine(widthValue);
-    next_btn.style.display = "none";
-    timeOff.textContent = "Time Left";
 }
+
+
+
+
 
 // if Quit quiz clicked
 quit_quiz.onclick = ()=>{
