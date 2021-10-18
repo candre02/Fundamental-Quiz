@@ -45,9 +45,10 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 
 // if replay quiz clicked
 replay_quiz.onclick = () =>{
-    if (quiz_box.classList.add("activeQuiz")) {
-    } else if 
-        (quiz_box.classList.add("activeQuiz"))
+    if (quiz_box > result_box) {
+        quiz_box.classList.add("activeQuiz") 
+    } else (result_box < quiz_box) 
+        result_box.classList.remove("activeResult")
         let que_count = 0;
         let que_numb = 1;
         let timeValue = 20;
@@ -61,9 +62,9 @@ replay_quiz.onclick = () =>{
         startTimerLine(widthValue);
         next_btn.style.display = "none";
         timeOff.textContent = "Time Left";
-} else {
-    result_box.classList.remove("activeResult");
 }
+    
+
 
 
 
