@@ -13,9 +13,7 @@ Quiz on javascript fundamentals, included Q/A's, timer is deducted when answers 
 
 
 ## Website
-https://github.com/candre02/Fundamental-Quiz.git
-
-## Repository
 https://candre02.github.io/Fundamental-Quiz/
 
-
+## Repository
+https://github.com/candre02/Fundamental-Quiz.git
