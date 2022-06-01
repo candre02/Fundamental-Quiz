@@ -6,13 +6,13 @@ Quiz on javascript fundamentals, included Q/A's, timer is deducted when answers 
 ## Built With
 * HTML
 * CSS
-* JS
+* JavaScript
 
 ### Images
 ![startyourenegines](https://user-images.githubusercontent.com/81876258/137219936-045d6f23-8614-4568-a4af-25d9cd9f74ea.png)
 
 
-### Website
+### Front-end website
 [Deployed Link](https://candre02.github.io/Fundamental-Quiz/)
 
 ### Repository
