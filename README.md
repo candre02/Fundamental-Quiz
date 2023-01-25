@@ -1,7 +1,7 @@
 # Fundamental-Quiz
 
 ## Purpose
-Quiz on javascript fundamentals, included Q/A's, timer is deducted when answers are wrong, presented applicants initials and there total score.
+Included Q/A’s, time is deducted from timer when questions are answered incorrectly, presented quiz-takers initials and their total score.  
 
 ## Built With
 * HTML
