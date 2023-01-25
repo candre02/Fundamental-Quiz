@@ -7,6 +7,7 @@ Quiz on javascript fundamentals, included Q/A's, timer is deducted when answers 
 * HTML
 * CSS
 * JavaScript
+* Web APIs
 
 ### Images
 ![startyourenegines](https://user-images.githubusercontent.com/81876258/137219936-045d6f23-8614-4568-a4af-25d9cd9f74ea.png)
